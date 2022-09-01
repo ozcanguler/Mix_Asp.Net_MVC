@@ -1,0 +1,52 @@
+﻿@model List<ASP.Net_Button_WebChall.Models.ButtonModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome to the buttons page.</h1>
+        @Html.Label("Playing with buttons")
+        @using (Html.BeginForm("HandleButtonClick", "Button"))
+        {
+            for (int i = 0; i < Model.Count; i++)
+            {
+
+                if (i % 5 == 0)
+                {
+                    <br />
+                }
+    <button type="submit" name="mine" value="@i">
+      
+        
+        @switch (Model[i].State)
+        {
+            case 1:<img src="~/images/1.png" />break;
+            case 2:<img src="~/images/2.png" />break;
+            case 3:<img src="~/images/3.png" />break;
+            case 4:<img src="~/images/4.png" />break;
+            case 5:<img src="~/images/5.png" />break;
+            case 6:<img src="~/images/6.png" />break;
+            case 7:<img src="~/images/7.png" />break;
+            case 8:<img src="~/images/8.png" />break;
+            default:
+                break;
+        }
+    </button>
+            }
+        }
+
+
+
+
+    </div>
+</body>
+</html>
